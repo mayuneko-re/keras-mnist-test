@@ -86,6 +86,8 @@
 
   <script>
 
+    async function main() {
+    
     // init SignaturePad
     const drawElement = document.getElementById('draw-area');
     const signaturePad = new SignaturePad(drawElement, {
@@ -104,8 +106,7 @@
     //    document.getElementById('predict-button').classList.remove('is-loading');
     //    model = pretrainedModel;
     //  });
-    let model;
-    model = tf.loadLayersModel('./model/model.json');
+    const model = await tf.loadLayersModel('./model/model.json');
     document.getElementById('predict-button').classList.remove('is-loading');
      
     function getImageData() {
@@ -171,6 +172,9 @@
         el.innerText = '-';
       })
     }
+      
+    }
+    main()
 
   </script>
 </body>
