@@ -140,8 +140,8 @@
         input = input.expandDims();
 
         // predict
-        console.log(model.predict(input));
-        return model.predict(input).dataSync();
+        // return model.predict(input).dataSync();
+        return model.execute(input"output_scores");
       });
 
       return score;
