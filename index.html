@@ -95,6 +95,8 @@
        backgroundColor: 'black',
     });
 
+    console.log(tf.version)
+
     // load pre-trained model
     // let model;
     // tf.loadModel('./model/model.json')
@@ -146,6 +148,7 @@
 
     function prediction() {
       const imageData = getImageData();
+      console.log("getImageData")
       const accuracyScores = getAccuracyScores(imageData);
       const maxAccuracy = accuracyScores.indexOf(Math.max.apply(null, accuracyScores));
 
