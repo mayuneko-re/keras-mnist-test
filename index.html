@@ -111,7 +111,7 @@
       model = await tf.loadLayersModel('./model/model.json');
       document.getElementById('predict-button').classList.remove('is-loading');
     };
-    main()
+    main();
      
     function getImageData() {
       const inputWidth = inputHeight = 28;
