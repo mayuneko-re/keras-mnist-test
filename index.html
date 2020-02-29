@@ -105,8 +105,13 @@
     //    document.getElementById('predict-button').classList.remove('is-loading');
     //    model = pretrainedModel;
     //  });
-    const model = tf.loadLayersModel('./model/model.json');
-    document.getElementById('predict-button').classList.remove('is-loading');
+    
+    let model;
+    async function main() {
+      model = await tf.loadLayersModel('./model/model.json');
+      document.getElementById('predict-button').classList.remove('is-loading');
+    };
+    main()
      
     function getImageData() {
       const inputWidth = inputHeight = 28;
