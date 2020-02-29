@@ -81,8 +81,7 @@
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.8.0"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.8.0"></script>
   <script>
 
     // init SignaturePad
@@ -95,18 +94,13 @@
     });
 
     // load pre-trained model
-    // let model;
-    // tf.loadModel('./model/model.json')
-    //   .then(pretrainedModel => {
-    //     document.getElementById('predict-button').classList.remove('is-loading');
-    //     model = pretrainedModel;
-    //   });
-    const model = await tf.loadLayersModel('model/model.json')
-        .then(pretrainedModel => {
-         document.getElementById('predict-button').classList.remove('is-loading');
-         model = pretrainedModel;
-       });
-
+    let model;
+    tf.loadModel('./model/model.json')
+      .then(pretrainedModel => {
+        document.getElementById('predict-button').classList.remove('is-loading');
+        model = pretrainedModel;
+      });
+    
     function getImageData() {
       const inputWidth = inputHeight = 28;
 
