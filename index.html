@@ -104,7 +104,7 @@
     //    document.getElementById('predict-button').classList.remove('is-loading');
     //    model = pretrainedModel;
     //  });
-    const model = await tf.loadLayersModel('./model/model.json');
+    let model = tf.loadLayersModel('./model/model.json');
     document.getElementById('predict-button').classList.remove('is-loading');
      
     function getImageData() {
