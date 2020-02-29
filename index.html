@@ -131,7 +131,8 @@
       const score = tf.tidy(() => {
         // convert to tensor (shape: [width, height, channels])  
         const channels = 1; // grayscale              
-        let input = tf.fromPixels(imageData, channels);
+        // let input = tf.fromPixels(imageData, channels);
+        let input = tf.browser.fromPixels(imageData, channels);
 
         // normalized
         input = tf.cast(input, 'float32').div(tf.scalar(255));
@@ -148,7 +149,7 @@
 
     function prediction() {
       const imageData = getImageData();
-      console.log("getImageData")
+      //console.log("getImageData")
       const accuracyScores = getAccuracyScores(imageData);
       const maxAccuracy = accuracyScores.indexOf(Math.max.apply(null, accuracyScores));
 
