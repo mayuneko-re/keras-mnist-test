@@ -101,8 +101,8 @@
     //     document.getElementById('predict-button').classList.remove('is-loading');
     //     model = pretrainedModel;
     //   });
-    const model = await tf.loadLayersModel('model/model.json'); // モデルのパスを指定して読み込む
-    model.then(pretrainedModel => {
+    const model = await tf.loadLayersModel('model/model.json')
+        .then(pretrainedModel => {
          document.getElementById('predict-button').classList.remove('is-loading');
          model = pretrainedModel;
        });
