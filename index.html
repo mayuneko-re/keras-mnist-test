@@ -141,7 +141,7 @@
 
         // predict
         // return model.predict(input).dataSync();
-        return model.execute(input"output_scores");
+        return model.execute(input, "output_scores");
       });
 
       return score;
